@@ -1,0 +1,21 @@
+[package]
+name = "kensa"
+version = "0.1.0"
+authors = ["Chris Fung <aergonaut@gmail.com"]
+repository = "https://github.com/aergonaut/kensa.git"
+homepage = "https://github.com/aergonaut/kensa.git"
+license = "MIT"
+readme = "README.md"
+
+[lib]
+name = "kensa"
+path = "src/kensa/lib.rs"
+
+[[bin]]
+name = "server"
+test = false
+doc = false
+
+[dependencies]
+rocket = "0.1.2"
+rocket_codegen = "0.1.2"
