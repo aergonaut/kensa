@@ -12,5 +12,23 @@
 //! *   create
 //! *   update
 //! *   destroy
+use rocket::Request;
+use rocket_contrib::JSON;
 
 pub mod features;
+
+#[derive(Debug, Serialize)]
+pub struct ClientError {
+    pub id: String,
+    pub message: String,
+    pub url: Option<String>
+}
+
+#[error(404)]
+pub fn not_found(_: &Request) -> JSON<ClientError> {
+    JSON(ClientError {
+        id: "not_found".to_owned(),
+        message: "The requested resource could not be found".to_owned(),
+        url: None
+    })
+}

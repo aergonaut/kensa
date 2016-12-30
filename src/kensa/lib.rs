@@ -40,5 +40,6 @@ pub fn start_server() {
     rocket::ignite()
         .mount("/", routes![index])
         .mount("/features", routes![handlers::features::index, handlers::features::show, handlers::features::create, handlers::features::destroy])
+        .catch(errors![handlers::not_found])
         .launch();
 }
