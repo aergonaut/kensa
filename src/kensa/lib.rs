@@ -39,6 +39,6 @@ fn index() -> &'static str {
 pub fn start_server() {
     rocket::ignite()
         .mount("/", routes![index])
-        .mount("/features", routes![handlers::features::index])
+        .mount("/features", routes![handlers::features::index, handlers::features::show, handlers::features::create, handlers::features::destroy])
         .launch();
 }
