@@ -1,5 +1,12 @@
 # kensa
 
+Kensa is a service intended to analyze GitHub Pull Requests and report which of
+a set of user-configured "features" match the PR. Features describe
+characteristics of the PR such as LOC of patch, paths of changed files,
+etc., but could also delegate to other external systems to perform more
+intricate examination of the code, such as actually building artifacts and
+running them.
+
 ## License
 
 Licensed under either of
